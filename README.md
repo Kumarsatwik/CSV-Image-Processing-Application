@@ -15,7 +15,7 @@ A Node.js application that processes CSV files containing product information an
 ```
 Backend Framework: Express.js
 Database: MongoDB with Mongoose
-Queue System: Bull (Redis-based)
+Queue System: Bull (Redis-based) , Upstash redis
 Image Processing: Sharp
 File Processing: csv-parser, multer
 API Documentation: Swagger
@@ -38,10 +38,6 @@ cd csv-image-processing-app
 ```bash
 # Install Package
 npm install
-# Run Redis in a Docker container:
-docker run --name redis-local -p 6379:6379 -d redis
-# [optional] Verify Redis is running:
-docker ps
 
 ```
 
@@ -52,7 +48,11 @@ docker ps
 PORT=4000
 MONGODB_URI=mongodb://localhost:27017/image-processor
 WEBHOOK_URL=http://localhost:4000/api/webhook
+UPSTASH_REDIS_URL=https://.upstash.io
+UPSTASH_REDIS_TOKEN=<your_upstash_redis_token>
 ```
+
+**Generate Upstash Redis token, Replace `<your_upstash_redis_token>` with your actual Upstash Redis token and url also.**
 
 4. Start the application
 
