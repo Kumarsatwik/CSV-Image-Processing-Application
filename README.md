@@ -67,15 +67,17 @@ npm start
 
 ## Architecture Diagram
 
-![alt text](image.png)
+
+![image](https://github.com/user-attachments/assets/ae959fb4-f1c8-4ce1-b626-3804a01837c6)
 
 ## Database Schema
 
-![alt text](image-2.png)
+![image-2](https://github.com/user-attachments/assets/164090fe-4351-4258-89ef-27a49692faad)
+
 
 ## Processing Flow
 
-![alt text](image-3.png)
+![image-3](https://github.com/user-attachments/assets/ced2d4a7-317f-4582-abec-e89d549b0690)
 
 ## API Endpoints
 
