@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "c0a19178-6161-4352-8a42-f24e18db78a1",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19391542"
+	},
+	"item": [
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/kumar/Downloads/sample_products.csv"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/upload",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/status/916408a4-321b-422e-989c-2f589e45eace",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"status",
+						"916408a4-321b-422e-989c-2f589e45eace"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
