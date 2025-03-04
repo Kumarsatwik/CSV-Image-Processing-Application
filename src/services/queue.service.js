@@ -12,7 +12,13 @@ const { triggerWebhook } = require("./webhook.service");
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_URL,
   token: process.env.UPSTASH_REDIS_TOKEN,
-})
+  enableOfflineQueue: true,
+  enableAutoPipelining: true,
+  retryStrategy: (times) => {
+    // reconnect after
+    return Math.min(times * 50, 2000);
+  },
+});
 
 const imageQueue = new Queue("image-processing", {
   redis,
