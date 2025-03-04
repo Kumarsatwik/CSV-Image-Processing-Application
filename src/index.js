@@ -33,7 +33,7 @@ app.use("/api/webhook", webhookRoutes);
 
 // Base route
 app.get("/", (req, res) => {
-  res.send("CSV Image Processing API");
+  res.sendStatus(200);
 });
 
 // Connect to database and start server
