@@ -15,13 +15,15 @@ A Node.js application that processes CSV files containing product information an
 ```
 Backend Framework: Express.js
 Database: MongoDB with Mongoose
-Queue System: Bull (Redis-based) , Upstash redis
+Queue System: Bull (Redis-based), Upstash Redis, IORedis
 Image Processing: Sharp
 File Processing: csv-parser, multer
 API Documentation: Swagger
 Environment: dotenv
 Logging: morgan
 HTTP Client: axios
+Cloud Deployment: Serverless Framework, AWS Lambda, AWS S3
+Utilities: uuid, cors
 ```
 
 ## Project Setup
