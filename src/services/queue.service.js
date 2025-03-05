@@ -1,28 +1,26 @@
 const Queue = require("bull");
-const Redis = require("ioredis");
+const { createRedisClient } = require("../config/redis");
 const path = require("path");
 const { imageProcessor } = require("./image.service");
 const Request = require("../models/request.model");
 const Product = require("../models/product.model");
 const { triggerWebhook } = require("./webhook.service");
-
-
-
-// Create Redis connection for Bull queue
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_URL,
-  token: process.env.UPSTASH_REDIS_TOKEN,
-  enableOfflineQueue: true,
-  enableAutoPipelining: true,
-  retryStrategy: (times) => {
-    // reconnect after
-    return Math.min(times * 50, 2000);
+const queueOptions = {
+  
+  createClient: function (type) {
+    return createRedisClient();
   },
-});
+  defaultJobOptions: {
+    attempts: 3,
+    backoff: {
+      type: "exponential",
+      delay: 1000,
+    },
+    removeOnComplete: true,
+  },
+};
 
-const imageQueue = new Queue("image-processing", {
-  redis,
-});
+const imageQueue = new Queue("image-processing", queueOptions);
 
 // process queue jobs
 imageQueue.process(async (job) => {

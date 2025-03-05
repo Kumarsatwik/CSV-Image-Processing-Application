@@ -8,7 +8,11 @@ const router = express.Router();
 // Configure multer storage for CSV file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../../uploads"));
+    // Use /tmp directory in Lambda environment, otherwise use local uploads directory
+    const uploadDir = process.env.AWS_LAMBDA_FUNCTION_NAME 
+      ? '/tmp' 
+      : path.join(__dirname, "../../uploads");
+    cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);

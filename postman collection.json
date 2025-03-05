@@ -17,7 +17,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "/C:/Users/kumar/Downloads/sample_products.csv"
+							"src": "/D:/code/assesment_spyne/csv-image-processing-app/sample_csv.csv"
 						},
 						{
 							"key": "",
@@ -46,14 +46,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/status/916408a4-321b-422e-989c-2f589e45eace",
+					"raw": "{{BASE_URL}}/api/status/6027c8c6-35e3-4f45-bea5-9fc60cc1cd72",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
 						"status",
-						"916408a4-321b-422e-989c-2f589e45eace"
+						"6027c8c6-35e3-4f45-bea5-9fc60cc1cd72"
 					]
 				}
 			},

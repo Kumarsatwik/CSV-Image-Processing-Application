@@ -67,13 +67,11 @@ npm start
 
 ## Architecture Diagram
 
-
 ![image](https://github.com/user-attachments/assets/ae959fb4-f1c8-4ce1-b626-3804a01837c6)
 
 ## Database Schema
 
 ![image-2](https://github.com/user-attachments/assets/164090fe-4351-4258-89ef-27a49692faad)
-
 
 ## Processing Flow
 
